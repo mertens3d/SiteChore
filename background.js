@@ -7,6 +7,10 @@ function loadFunctions() {
 
 }
 
+
+
+
+
 chrome.commands.onCommand.addListener(function (command) {
 	//loadFunctions();
 	console.log('onCommand event received for message 666: ', command);

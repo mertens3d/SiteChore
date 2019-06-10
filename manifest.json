@@ -2,11 +2,11 @@
 	"name": "Site Chore",
 	"version": "1.0",
 	"description": "Sitecore hotkeys and such",
-	"web_accessible_resources": [ "sitecore-shortcut-functions.js" ],
+	"web_accessible_resources": [ "sitecore-shortcut-functions.js", "content.vars.js", "contentscript.js" ],
 	"content_scripts": [
 		{
 			"matches": [ "http://*/sitecore/*" ],
-			"js": [ "contentscript.js" ]
+			"js": [  "contentscript.js" ]
 		}
 	],
 	"permissions": [

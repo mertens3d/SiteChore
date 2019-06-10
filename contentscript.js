@@ -9,25 +9,25 @@ console.log("contentscript.js - loaded b");
 //	s.parentNode.removeChild(s);
 //};
 
-document.onkeyup = function (e) {
-	if (e.which == 77) {
-		alert("M key was pressed");
-	} else if (e.ctrlKey && e.which == 66) {
-		alert("Ctrl + B shortcut combination was pressed");
-	} else if (e.ctrlKey && e.altKey && e.which == 89) {
-		alert("Ctrl + Alt + Y shortcut combination was pressed");
-	} else if (e.ctrlKey && e.altKey && e.shiftKey && e.which == 85) {
-		alert("Ctrl + Alt + Shift + U shortcut combination was pressed");
-	}
+
+
+var s = document.createElement('script');
+// TODO: add "script.js" to web_accessible_resources in manifest.json
+s.src = chrome.runtime.getURL('content.vars.js');
+console.log(s.src);
+s.onload = function () {
+	this.remove();
 };
+(document.head || document.documentElement).appendChild(s);
 
 
-function testDog() {
-	console.log("trying");
-	var btn = document.querySelectorAll('[name="LogInBtn"]');
-	if (btn && btn.length > 0) {
-		console.log("found " + btn);
-		btn[0].click();
-	}
-}
-testDog();
+
+//s = document.createElement('script');
+//// TODO: add "script.js" to web_accessible_resources in manifest.json
+//s.src = chrome.runtime.getURL('contentscript.js');
+//console.log(s.src);
+//s.onload = function () {
+//	this.remove();
+//};
+//(document.head || document.documentElement).appendChild(s);
+
