@@ -29,9 +29,13 @@ chrome.commands.onCommand.addListener(function (command) {
 
 chrome.browserAction.onClicked.addListener(function (tab) {
 	// for the current tab, inject the "inject.js" file & execute it
+
+	console.log("here");
+
 	chrome.tabs.executeScript(tab.ib, {
 		file: 'sitecore-shortcut-functions.js'
 	});
+
 });
 
 chrome.storage.sync.get('color', function (data) {

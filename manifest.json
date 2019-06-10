@@ -5,8 +5,9 @@
 	"web_accessible_resources": [ "sitecore-shortcut-functions.js", "content.vars.js", "contentscript.js" ],
 	"content_scripts": [
 		{
-			"matches": [ "http://*/sitecore/*" ],
-			"js": [  "contentscript.js" ]
+			"matches": [ "http://*/sitecore/*", "http://*/*sc_*" ],
+			"js": [ "contentscript.js" ],
+			"run_at":  "document_idle" 
 		}
 	],
 	"permissions": [
