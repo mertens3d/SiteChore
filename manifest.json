@@ -5,8 +5,8 @@
 	"web_accessible_resources": [ "sitecore-shortcut-functions.js" ],
 	"content_scripts": [
 		{
-			"js": [ "contentscript.js" ],
-			"matches": [ "http://mobile.twitter.com/*" ]
+			"matches": [ "http://*/sitecore/*" ],
+			"js": [ "contentscript.js" ]
 		}
 	],
 	"permissions": [
